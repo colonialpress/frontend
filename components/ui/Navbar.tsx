@@ -157,6 +157,3 @@ const LinkText = styled.a`
         padding: 0 15px;
     }
 `
-
-
-

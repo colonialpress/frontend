@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import LightTheme from "../styles/theme/LightTheme";
 import Navbar from "./../components/ui/Navbar";
+import Footer from "./../components/ui/Footer";
 import GlobalStyle from "../styles/GlobalStyle";
 import { Sun, Moon } from "react-feather";
 import DarkTheme from "../styles/theme/DarkTheme";
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }) {
           >
             {darkTheme ? <Moon/> : <Sun/>}
           </ThemeToggleContainer>
+          <Footer />
         </PageContainer>
       </ThemeProvider>
     </Wrapper>
