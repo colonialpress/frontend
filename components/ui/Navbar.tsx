@@ -41,7 +41,7 @@ export default function Navbar(props) {
     const [width, setWidth] = useState(0);
 
     const isDesktop = () => {
-        return width > 700;
+        return width > 800;
     }
 
     useEffect(() => {
@@ -94,7 +94,7 @@ const Wrapper = styled.div`
         box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
     `}
 
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -106,7 +106,7 @@ const LogoSection = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         justify-content: center;
     }
 `
@@ -141,7 +141,7 @@ const LinksWrapper = styled.div`
     width: 100%;
     padding: 10px 0;
 
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -153,7 +153,7 @@ const LinkText = styled.a`
     font-size: 1rem;
     cursor: pointer;
 
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         padding: 0 15px;
     }
 `
