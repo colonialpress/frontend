@@ -14,10 +14,10 @@ export default function Footer() {
     return (
         <Container>
             <Box>
-                <TextWarpper>
+                <TextWrapper>
                     <ReadyText>Ready to get printing?</ReadyText>
                     <CabailitiesText>See what we are capable of by checking out our services or contact us.</CabailitiesText>
-                </TextWarpper>
+                </TextWrapper>
                 <ButtonWrapper>
                     <Button>Our Services</Button>
                 </ButtonWrapper>
@@ -36,7 +36,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const TextWarpper = styled.div`
+const TextWrapper = styled.div`
     display: flex;
     padding-left: 15%;
     flex-direction: column;
