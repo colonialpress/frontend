@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import LightTheme from "../styles/theme/LightTheme";
 import Navbar from "./../components/ui/Navbar";
+import Header from "./../components/ui/Header";
 import Footer from "./../components/ui/Footer";
 import GlobalStyle from "../styles/GlobalStyle";
 import { Sun, Moon } from "react-feather";
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={getTheme()}>
         <GlobalStyle />
         <Navbar />
+        <Header />
         <PageContainer>
           <Component {...pageProps} />
           <ThemeToggleContainer
