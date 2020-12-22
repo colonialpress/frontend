@@ -12,12 +12,20 @@ const links = [
         text: "Home"
     },
     {
-        link: "/faq",
-        text: "FAQ"
+        link: "/services",
+        text: "Services"
+    },
+    {
+        link: "/prepressdesign",
+        text: "Pre Press & Design"
+    },
+    {
+        link: "/about",
+        text: "About Us"
     },
     {
         link: "/contact",
-        text: "Contact"
+        text: "Contact Us"
     }
 ]
 
@@ -26,7 +34,7 @@ export default function Navbar(props) {
     const themeContext = useContext(ThemeContext);
 
     const getLogoPath = () => {
-        return themeContext === DarkTheme ? "logo-dark.svg" : "logo-light.svg"
+        return themeContext === DarkTheme ? "colonialpress-vector.svg" : "colonialpress-vector.svg"
     }
 
     const [toggled, setToggled] = useState(false);
@@ -112,7 +120,7 @@ const HamburgerButton = styled.div`
 
 const Logo = styled.img`
     width: auto;
-    height: 3em;
+    height: 4em;
     padding: 10px;
 
     @media(min-width: 1000px) {

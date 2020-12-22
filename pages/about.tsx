@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Home() {
   return (
     <Wrapper>
-      <h2>Home</h2>
+      <h2>About Us</h2>
     </Wrapper>
   )
 }

@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import styled from "styled-components";
-export default function Home() {
+export default function Services() {
   return (
     <Wrapper>
-      <h2>Home</h2>
+      <h2>Services</h2>
     </Wrapper>
   )
 }

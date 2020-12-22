@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import styled from "styled-components";
-export default function Home() {
+export default function PrePressDesign() {
   return (
     <Wrapper>
-      <h2>Home</h2>
+      <h2>Pre-Press & Design</h2>
     </Wrapper>
   )
 }
