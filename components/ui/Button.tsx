@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   flex: 1 1 auto;
   color: ${(props: PropsTheme) => props.theme.buttonColor};
   background-color: ${(props: PropsTheme) => props.theme.buttonBackground};
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 5px;
   border: 2px solid ${(props: PropsTheme) => props.theme.buttonColor};
   text-decoration: none;
