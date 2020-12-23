@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <GlobalStyle />
         <Navbar />
         <PageContainer>
-          <Header />
+        <Header />
           <Component {...pageProps} />
           <ThemeToggleContainer
             onClick={() => {
