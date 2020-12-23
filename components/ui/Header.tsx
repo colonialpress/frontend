@@ -81,5 +81,5 @@ const HeaderTextWrapper = styled.div`
 const HeaderText = styled.div`
     font-size: 3rem;
     color: white;
-    
 `
+

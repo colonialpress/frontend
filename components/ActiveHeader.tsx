@@ -8,9 +8,9 @@ function ActiveHeader({ children, href }) {
     const themeContext: ITheme = useContext(ThemeContext);
 
     const router = useRouter()
-    const style = {
-        fontWeight: router.pathname === 
-        href ? 700 : 400
+    const style = { 
+        opacity: router.pathname === 
+        href ? 1 : 0
     }
 
     return (
