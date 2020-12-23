@@ -30,7 +30,7 @@ export default function Home() {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0% 8S%;
+  padding: 3% 8%;
   width: 100%;
   height: inherit;
   /* 10 year old chrome bug, use this instead of height 100% */
@@ -51,7 +51,6 @@ const TextWrapper = styled.div`
 
     @media(max-width: 1050px) {
         width 90%;
-        padding-top: 2%;
         padding-right: 0%;
     }
 `
@@ -72,7 +71,7 @@ const StaffImage = styled.img`
 
     @media(max-width: 1050px) {
       flex-direction: column;
-      padding-top: 2%;
+      padding-top: 3%;
       padding-left: 0%;
     }
 `
