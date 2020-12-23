@@ -65,11 +65,13 @@ const LowerAboutText = styled.p`
     display: flex;
 `
 const StaffImage = styled.img`
+    width: 35%;
     display: flex;
     flex-direction: row;
     padding-left: 5%;
 
     @media(max-width: 1050px) {
+      width: 50%;
       flex-direction: column;
       padding-top: 3%;
       padding-left: 0%;
