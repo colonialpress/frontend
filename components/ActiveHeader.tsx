@@ -9,8 +9,7 @@ function ActiveHeader({ children, href }) {
 
     const router = useRouter()
     const style = { 
-        opacity: router.pathname === 
-        href ? 1 : 0
+        opacity: router.pathname === href ? 1 : 0
     }
 
     return (
