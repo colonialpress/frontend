@@ -12,31 +12,58 @@ export default function Footer() {
     const themeContext = useContext(ThemeContext);
 
     return (
-        <Wrapper>
+        <Container>
             <Box>
-                <h2>Ready to get printing?</h2>
-                <p>See what we are capable of by checking out our services or contact us.</p>
+                <TextWarpper>
+                    <ReadyText>Ready to get printing?</ReadyText>
+                    <CabailitiesText>See what we are capable of by checking out our services or contact us.</CabailitiesText>
+                </TextWarpper>
                 <ButtonWrapper>
                     <Button>Our Services</Button>
                 </ButtonWrapper>
             </Box>
-        </Wrapper>
+        </Container>
     )
 }
 
-const Wrapper = styled.div`
-    width: 100vw;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: inherit;
+  /* 10 year old chrome bug, use this instead of height 100% */
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+`;
+const TextWarpper = styled.div`
     display: flex;
+    padding-left: 15%;
     flex-direction: column;
-    padding: 0 0.5em;
-    /* This will basically push everything to left and right. */
     justify-content: center;
+
+    @media(max-width: 800px) {
+        padding-left: 10%;
+    }
+`
+const ReadyText = styled.h2`
+    font-size: 35px;
+
+    @media(max-width: 1050px) {
+        font-size: 25px;
+    }
+`
+const CabailitiesText = styled.p`
+    @media(max-width: 1050px) {
+        font-size: 15px;
+    }
+
 `
 const Box = styled.div`
     width: 75%;
     display: flex;
     flex-direction: column;
-    padding: 0 0.5em;
+    padding: 10px 0.5em;
     /* This will basically push everything to left and right. */
     justify-content: center;
 
@@ -48,10 +75,19 @@ const Box = styled.div`
     `}
     /* Box shadow for light mode. */
     ${(props: PropsTheme) => props.theme === LightTheme && css`
-        box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
+        box-shadow: 0px 25px 50px ${props => props.theme.boxShadowColor};
     `}
+
+    @media(max-width: 800px) {
+        width: 92%;
+        padding: 6px 0.5em;
+    }
 `
 const ButtonWrapper = styled.div`
-    width: 15%;
-    padding-left: 1%;
+    width: 100%;
+    padding-left: 15%;
+
+    @media(max-width: 800px) {
+        padding-left: 10%;
+    }
 `
