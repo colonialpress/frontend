@@ -12,7 +12,7 @@ export default function PrePressDesign() {
       </Item>
       <Item>
         <ListsContainer>
-          <Item>
+          <ListGroup>
             <ListTitle>Mac:</ListTitle>
             <ListContainer>
               <ListItem>InDesign</ListItem>
@@ -23,8 +23,8 @@ export default function PrePressDesign() {
               <ListItem>Microsoft Word</ListItem>
               <ListItem>Microsoft Publisher</ListItem>
             </ListContainer>
-          </Item>
-          <Item>
+          </ListGroup>
+          <ListGroup>
             <ListTitle>PC:</ListTitle>
             <ListContainer>
               <ListItem>PageMaker</ListItem>
@@ -34,8 +34,8 @@ export default function PrePressDesign() {
               <ListItem>Microsoft Word</ListItem>
               <ListItem>Microsoft Publisher</ListItem>
             </ListContainer>
-          </Item>
-          <Item>
+          </ListGroup>
+          <ListGroup>
             <ListTitle>Files Accepted:</ListTitle>
             <ListContainer>
               <ListItem>Zip</ListItem>
@@ -43,7 +43,7 @@ export default function PrePressDesign() {
               <ListItem>E-Mail</ListItem>
               <ListItem>FTP Site</ListItem>
             </ListContainer>
-          </Item>
+          </ListGroup>
         </ListsContainer>
       </Item>
     </Container>
@@ -67,12 +67,13 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: inline;
   padding: 2% 0%;
 
   @media(max-width: 1000px) {
+    display: flex;
     padding: 3% 10%;
+    flex-direction: column;
   }
 `
 
@@ -97,7 +98,8 @@ const ListsContainer = styled.div`
   height: 100%;
 
   @media(max-width: 1000px) {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
   }
 `
@@ -109,7 +111,10 @@ const ListContainer = styled.div`
     width: 100%;
   }
 `
-
+const ListGroup = styled.div`
+display: flex;
+flex-direction: column;
+`
 const ListItem = styled.p`
 
 `
