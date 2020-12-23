@@ -25,7 +25,7 @@ const headertexts = [
     }
 ]
 
-export default function Header(props) {
+export default function Header() {
 
     const themeContext = useContext(ThemeContext);
 
@@ -35,9 +35,13 @@ export default function Header(props) {
 
     return (
         <Container>
-            <HeaderSection>
+            <HeaderWrapper>
                 <HeaderImage src={`/img/header/${getHeaderImagePath()}`} />
-            </HeaderSection>
+                {headertexts.map(entry => <HeaderTextWrapper>
+                    <HeaderText>{entry.text}</HeaderText>
+                </HeaderTextWrapper>)
+                }
+            </HeaderWrapper>
         </Container>
     )
 }
@@ -53,14 +57,27 @@ const Container = styled.div`
   align-items: center;
 `
 
-const HeaderSection = styled.div`
+const HeaderWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
     padding: 0px;
+    position: relative;
 `
 
 const HeaderImage = styled.img`
     width: 100%;
     height: auto;
+`
+
+const HeaderTextWrapper = styled.div`
+    position: absolute;
+    top: 40%;
+    left: 10%;
+`
+
+const HeaderText = styled.div`
+    font-size: 3rem;
+    color: white;
+    
 `
