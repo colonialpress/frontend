@@ -79,7 +79,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3% 8%;
-  width: 100%;
+  width: 100vw;
   height: inherit;
   /* 10 year old chrome bug, use this instead of height 100% */
   flex-grow: 1;
@@ -92,9 +92,10 @@ const Container = styled.div`
 `;
 
 const Item = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   padding: 2% 0%;
+  position: relative
 `
 
 const PrintingText = styled.p`
@@ -131,6 +132,7 @@ const ListContainer = styled.div`
 `
 
 const ListItem = styled.p`
+  color: #383838;
   width: 25%;
   padding 1px 25px;
   @media(max-width: 1000px) {
