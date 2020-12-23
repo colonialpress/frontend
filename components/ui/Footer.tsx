@@ -86,6 +86,7 @@ const Box = styled.div`
 const ButtonWrapper = styled.div`
     width: 100%;
     padding-left: 15%;
+    padding-top: 2%;
 
     @media(max-width: 800px) {
         padding-left: 10%;
