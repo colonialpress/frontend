@@ -20,10 +20,6 @@ const links = [
         text: "Pre Press & Design"
     },
     {
-        link: "/about",
-        text: "About Us"
-    },
-    {
         link: "/contact",
         text: "Contact Us"
     }
