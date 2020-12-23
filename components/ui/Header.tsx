@@ -47,7 +47,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: inherit;
   /* 10 year old chrome bug, use this instead of height 100% */
   flex-grow: 1;
   justify-content: center;

@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={getTheme()}>
         <GlobalStyle />
         <Navbar />
+        <Header />
         <PageContainer>
-          <Header />
           <Component {...pageProps} />
           <ThemeToggleContainer
             onClick={() => {
