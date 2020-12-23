@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import ActiveHeader from "./../ActiveHeader";
 const headertexts = [
     {
@@ -25,7 +24,6 @@ const headertexts = [
 ]
 
 export default function Header() {
-    const route = useRouter();
 
     const themeContext = useContext(ThemeContext);
 
