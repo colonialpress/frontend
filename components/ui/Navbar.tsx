@@ -17,7 +17,7 @@ const links = [
     },
     {
         link: "/prepressdesign",
-        text: "Pre Press & Design"
+        text: "Pre-Press & Design"
     },
     {
         link: "/contact",
@@ -30,14 +30,14 @@ export default function Navbar(props) {
     const themeContext = useContext(ThemeContext);
 
     const getLogoPath = () => {
-        return themeContext === DarkTheme ? "colonialpress-vector.svg" : "colonialpress-vector.svg"
+        return themeContext === DarkTheme ? "colonialpress-vector-noshadow.svg" : "colonialpress-vector.svg"
     }
 
     const [toggled, setToggled] = useState(false);
     const [width, setWidth] = useState(0);
 
     const isDesktop = () => {
-        return width > 800;
+        return width > 700;
     }
 
     useEffect(() => {
@@ -78,7 +78,6 @@ const Wrapper = styled.div`
     padding: 0 0.5em;
     /* This will basically push everything to left and right. */
     justify-content: center;
-
     /* Want a line instead of shadow in dark mode. */
     background: ${(props: PropsTheme) => props.theme.background};
     ${props => props.theme === DarkTheme && css`
@@ -89,8 +88,7 @@ const Wrapper = styled.div`
     ${(props: PropsTheme) => props.theme === LightTheme && css`
         box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
     `}
-
-    @media(min-width: 800px) {
+    @media(min-width: 700px) {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -101,8 +99,7 @@ const LogoSection = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    @media(min-width: 800px) {
+    @media(min-width: 700px) {
         justify-content: center;
     }
 `
@@ -116,9 +113,8 @@ const HamburgerButton = styled.div`
 
 const Logo = styled.img`
     width: auto;
-    height: 4em;
+    height: 3em;
     padding: 10px;
-
     @media(min-width: 1000px) {
         padding-left: 105px;
     }
@@ -136,8 +132,7 @@ const LinksWrapper = styled.div`
     justify-content: center;
     width: 100%;
     padding: 10px 0;
-
-    @media(min-width: 800px) {
+    @media(min-width: 700px) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -148,8 +143,7 @@ const LinksWrapper = styled.div`
 const LinkText = styled.a`
     font-size: 1rem;
     cursor: pointer;
-
-    @media(min-width: 800px) {
+    @media(min-width: 700px) {
         padding: 0 15px;
     }
 `
