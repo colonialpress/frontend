@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
-import LightTheme from "../../styles/theme/LightTheme";
-import PropsTheme from "../../styles/theme/PropsTheme";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
 const headertexts = [
@@ -21,7 +19,6 @@ const headertexts = [
     {
         link: "/contact",
         text: "Contact Us"
-    
     }
 ]
 
@@ -67,13 +64,13 @@ const HeaderWrapper = styled.div`
 
 const HeaderImage = styled.img`
     width: 100%;
-    height: auto;
 `
 
 const HeaderTextWrapper = styled.div`
     position: absolute;
     top: 40%;
     left: 10%;
+    padding: 5px;
 `
 
 const HeaderText = styled.div`
