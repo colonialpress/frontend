@@ -37,7 +37,7 @@ export default function Navbar(props) {
     const [width, setWidth] = useState(0);
 
     const isDesktop = () => {
-        return width > 700;
+        return width > 800;
     }
 
     useEffect(() => {
@@ -88,7 +88,7 @@ const Wrapper = styled.div`
     ${(props: PropsTheme) => props.theme === LightTheme && css`
         box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
     `}
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -99,7 +99,7 @@ const LogoSection = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         justify-content: center;
     }
 `
@@ -113,7 +113,7 @@ const HamburgerButton = styled.div`
 
 const Logo = styled.img`
     width: auto;
-    height: 3em;
+    height: 4.2em;
     padding: 10px;
     @media(min-width: 1000px) {
         padding-left: 105px;
@@ -132,7 +132,7 @@ const LinksWrapper = styled.div`
     justify-content: center;
     width: 100%;
     padding: 10px 0;
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -143,7 +143,7 @@ const LinksWrapper = styled.div`
 const LinkText = styled.a`
     font-size: 1rem;
     cursor: pointer;
-    @media(min-width: 700px) {
+    @media(min-width: 800px) {
         padding: 0 15px;
     }
 `
