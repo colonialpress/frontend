@@ -3,9 +3,13 @@ import styled from "styled-components";
 import DarkTheme from "./../styles/theme/DarkTheme";
 import LightTheme from "./../styles/theme/LightTheme";
 import PropsTheme from "./../styles/theme/PropsTheme";
+import Button from "./../components/ui/Button";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
+import { useRouter } from "next/router";
 export default function Home() {
+
+  const router = useRouter();
 
   const themeContext = useContext(ThemeContext);
 
@@ -35,7 +39,7 @@ const Container = styled.div`
   height: inherit;
   /* 10 year old chrome bug, use this instead of height 100% */
   flex-grow: 1;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
   @media(max-width: 1050px) {
@@ -45,13 +49,11 @@ const Container = styled.div`
 const TextWrapper = styled.div`
     display: flex;
     width: 50%;
-    padding-right: 5%;
     flex-direction: column;
     justify-content: center;
 
     @media(max-width: 1050px) {
         width 90%;
-        padding-right: 0%;
     }
 `
 const AboutTitle = styled.h2`
@@ -68,12 +70,10 @@ const StaffImage = styled.img`
     width: 35%;
     display: flex;
     flex-direction: row;
-    padding-left: 5%;
 
     @media(max-width: 1050px) {
       width: 50%;
       flex-direction: column;
       padding-top: 3%;
-      padding-left: 0%;
     }
 `
