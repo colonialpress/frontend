@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styled from "styled-components";
 export default function Services() {
   return (
@@ -85,7 +84,7 @@ const Container = styled.div`
   /* 10 year old chrome bug, use this instead of height 100% */
   flex-grow: 1;
   justify-content: center;
-  align-items: legt;
+  align-items: left;
 
   @media(max-width: 1050px) {
     flex-direction: column;
@@ -116,16 +115,18 @@ const ListContainer = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   height: 100%;
-  overflow: hidden;
+  overflow; hidden;
 
   @media(max-width: 1000px) {
-
+    
   }
   @media(max-width: 800px) {
     
   }
   @media(max-width: 650px) {
     flex-wrap: nowarp;
+    flex-direction: row;
+    justify-content: center;
   }
 `
 
