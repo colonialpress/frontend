@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
+import { useRouter } from 'next/router'
 const headertexts = [
     {
         link: "/",
@@ -23,6 +24,11 @@ const headertexts = [
 ]
 
 export default function Header() {
+    const route = useRouter();
+
+    if(route.pathname === "contact") {
+
+    }
 
     const themeContext = useContext(ThemeContext);
 

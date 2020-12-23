@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
 const PageContainer = styled.div`
   height: 100%;
   width: 100%;
-  padding: 0 0;
+  padding: 0 0.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
