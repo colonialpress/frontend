@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styled from "styled-components";
 export default function PrePressDesign() {
   return (
@@ -60,7 +59,7 @@ const Container = styled.div`
   /* 10 year old chrome bug, use this instead of height 100% */
   flex-grow: 1;
   justify-content: center;
-  align-items: legt;
+  align-items: left;
 
   @media(max-width: 1050px) {
     flex-direction: column;
@@ -71,6 +70,10 @@ const Item = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2% 0%;
+
+  @media(max-width: 1000px) {
+    padding: 3% 10%;
+  }
 `
 
 const TextTitle = styled.h2`
@@ -95,6 +98,7 @@ const ListsContainer = styled.div`
 
   @media(max-width: 1000px) {
     flex-wrap: wrap;
+    justify-content: center;
   }
 `
 
