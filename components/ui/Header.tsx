@@ -11,7 +11,7 @@ const headertexts = [
     },
     {
         link: "/services",
-        text: "Our Services"
+        text: "Services"
     },
     {
         link: "/prepressdesign",
@@ -80,4 +80,3 @@ const HeaderText = styled.div`
     font-size: 3rem;
     color: white;
 `
-
