@@ -3,26 +3,20 @@ import { useContext } from 'react';
 import { ThemeContext } from "styled-components";
 import ITheme from '../styles/theme/ITheme';
 
-function ActiveHeader() {
+function ActiveHeader({ children, href }) {
 
     const themeContext: ITheme = useContext(ThemeContext);
 
     const router = useRouter()
-    
-    let text;
-
-    if (router.pathname === "/services") {
-        text = "Our Services"
-    } else if (router.pathname === "/prepressdesign") {
-        text = "Pre-Press & Design"
-    } else if (router.pathname === "/contact") {
-        text = "Contact Us"
-    } else {
-        text = "Yesteryear's service with tomorrow's technology."
+    const style = {
+        fontWeight: router.pathname === 
+        href ? 700 : 400
     }
 
     return (
-        <p>{text}</p>
+        <div style={style}>
+            {children}
+        </div>
     )
 }
 

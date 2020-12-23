@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
+import ActiveHeader from "./../ActiveHeader";
 const headertexts = [
     {
         link: "/",
@@ -26,10 +27,6 @@ const headertexts = [
 export default function Header() {
     const route = useRouter();
 
-    if(route.pathname === "contact") {
-
-    }
-
     const themeContext = useContext(ThemeContext);
 
     const getHeaderImagePath = () => {
@@ -41,7 +38,9 @@ export default function Header() {
             <HeaderWrapper>
                 <HeaderImage src={`/img/header/${getHeaderImagePath()}`} />
                 {headertexts.map(entry => <HeaderTextWrapper>
-                    <HeaderText>{entry.text}</HeaderText>
+                    <ActiveHeader href={entry.link}>
+                        <HeaderText>{entry.text}</HeaderText>
+                    </ActiveHeader>
                 </HeaderTextWrapper>)
                 }
             </HeaderWrapper>
@@ -72,6 +71,7 @@ const HeaderImage = styled.img`
 `
 
 const HeaderTextWrapper = styled.div`
+    display: flex;
     position: absolute;
     top: 40%;
     left: 10%;
