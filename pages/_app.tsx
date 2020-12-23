@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={getTheme()}>
         <GlobalStyle />
         <Navbar />
-        <Header />
         <PageContainer>
+          <Header />
           <Component {...pageProps} />
           <ThemeToggleContainer
             onClick={() => {
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
 const PageContainer = styled.div`
   height: 100%;
   width: 100%;
-  padding: 0 0.5rem;
+  padding: 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
