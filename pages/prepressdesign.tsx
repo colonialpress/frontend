@@ -1,6 +1,5 @@
-import styled from "styled-components";
 import Content from "../components/pages/prepressdesign/content"
-export default function Services() {
+export default function PrePressDesign() {
   return (
     <>
     <Content />
