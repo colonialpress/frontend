@@ -57,7 +57,7 @@ export default function Navbar(props) {
         <Wrapper>
             <LogoSection>
                 <Logo src={`/img/navbar/${getLogoPath()}`} />
-                {!isDesktop() && <HamburgerButton onClick={() => setToggled(!toggled)} />}
+                {!isDesktop() && <HamburgerButton onClick={() => setToggled(!toggled)} alt={"Navbar Logo"} />}
             </LogoSection>
             {(toggled || isDesktop()) && <LinksWrapper>
                 {links.map(entry => <LinkWrapper>

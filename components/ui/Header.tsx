@@ -34,7 +34,7 @@ export default function Header() {
     return (
         <Container>
             <HeaderWrapper>
-                <HeaderImage src={`/img/header/${getHeaderImagePath()}`} />
+                <HeaderImage src={`/img/header/${getHeaderImagePath()}`} alt={"Header"} />
                 {headertexts.map(entry => <HeaderTextWrapper>
                     <ActiveHeader href={entry.link}>
                         <HeaderText>{entry.text}</HeaderText>
