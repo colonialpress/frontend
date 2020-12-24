@@ -74,9 +74,17 @@ const HeaderTextWrapper = styled.div`
     top: 40%;
     left: 10%;
     padding: 5px;
+
+    @media(max-width: 1000px) {
+        top: 30%;
+        padding: 3px;
+    }
 `
 
 const HeaderText = styled.div`
     font-size: 3rem;
     color: white;
+    @media(max-width: 1000px) {
+        font-size: 2rem;
+    }
 `
