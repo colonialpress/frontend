@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components";
-import DarkTheme from "../../styles/theme/DarkTheme";
-import LightTheme from "../../styles/theme/LightTheme";
 import PropsTheme from "../../styles/theme/PropsTheme";
 
 const Button = (props) => {

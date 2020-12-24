@@ -1,18 +1,13 @@
 import styled, { css } from "styled-components";
-import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
 import LightTheme from "../../styles/theme/LightTheme";
 import PropsTheme from "../../styles/theme/PropsTheme";
 import { useRouter } from "next/router";
 import Button from "./Button"
-import { ThemeContext } from "styled-components"
-import { useContext } from "react";
 
 export default function Footer() {
 
     const router = useRouter();
-
-    const themeContext = useContext(ThemeContext);
 
     return (
         <Container>

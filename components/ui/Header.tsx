@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { useState, useEffect } from "react";
 import DarkTheme from "../../styles/theme/DarkTheme";
 import { ThemeContext } from "styled-components"
 import { useContext } from "react";
