@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
         <GlobalStyle />
         <Navbar />
         <Header />
+        <br />
         <PageContainer>
           <Component {...pageProps} />
           <ThemeToggleContainer
@@ -30,8 +31,9 @@ function MyApp({ Component, pageProps }) {
           >
             {darkTheme ? <Moon/> : <Sun/>}
           </ThemeToggleContainer>
-          <Footer />
+          <br />
         </PageContainer>
+        <Footer />
       </ThemeProvider>
     </Wrapper>
   );

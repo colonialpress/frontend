@@ -65,6 +65,9 @@ const HeaderWrapper = styled.div`
 
 const HeaderImage = styled.img`
     width: 100%;
+  @media(max-width: 1000px) {
+    height: 75%;
+  }
 `
 
 const HeaderTextWrapper = styled.div`

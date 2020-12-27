@@ -52,6 +52,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     align-items: center;
+  padding-top: 3%;
+  @media(max-width: 1050px) {
+    padding-top: 8%;
+  }
 `
 
 const Container = styled.div`
@@ -62,7 +66,7 @@ const Container = styled.div`
     width: 100%;
     padding: 5% 15%;
     @media(max-width: 800px) {
-        padding: 5% 8%;
+        padding: 12% 8%;
     }
 `
 
@@ -93,7 +97,8 @@ const ListGroup = styled.div`
     padding: 2% 10%;
 
     @media(max-width: 800px) {
-        width: 100%
+        width: 100%;
+      padding: 5% 10%;
     }
 `
 

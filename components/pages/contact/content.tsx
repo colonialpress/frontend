@@ -31,6 +31,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     align-items: center;
+  padding-top: 5%;
+  @media(max-width: 1050px) {
+    padding-top: 16%;
+  }
 `
 const Container = styled.div`
     display: flex;
