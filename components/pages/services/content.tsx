@@ -35,6 +35,7 @@ export default function PrintingSection() {
                     <ListItem>Invitations</ListItem>
                 </ListContainer>
             </Container>
+            <br />
             <Container>
                 <Header>Advertising</Header>
                 <ListContainer>
@@ -54,6 +55,7 @@ export default function PrintingSection() {
                     <ListItem>Yard Signs</ListItem>
                 </ListContainer>
             </Container>
+            <br />
             <Container>
                 <Header>Finishing</Header>
                 <ListContainer>
@@ -79,25 +81,21 @@ export default function PrintingSection() {
 
 const Wrapper = styled.div`
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-  padding-top: 3%;
-  @media(max-width: 1050px) {
-    padding-top: 22%;
-  }
+    padding-top: 3%;
 `
 
 const Container = styled.div`
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    padding: 10% 15%;
-    @media(max-width: 800px) {
-        padding: 100px 8%;
-    }
+    padding: 0 12%;
 `
 
 const Header = styled.h2`
@@ -117,17 +115,20 @@ const TextBox = styled.p`
 
 const ListContainer = styled.div`
     display: flex;
+    display: -webkit-flex;
     align-items: flex-start;
     flex-wrap: wrap;
     height: inherit;
-    padding-top: 8px;
+  padding: 8px 8%;
 `
 
 const ListItem = styled.p`
+        display: flex;
     width: 25%;
     font-size: 18px;
     text-align: left;
     color: #383838;
+    flex: 0 1 auto;
 
     @media(max-width: 800px) {
         width: 50%

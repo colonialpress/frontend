@@ -31,10 +31,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     align-items: center;
-  padding-top: 5%;
-  @media(max-width: 1050px) {
-    padding-top: 16%;
-  }
+  padding-top: 3%;
 `
 const Container = styled.div`
     display: flex;
@@ -42,9 +39,9 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 5% 15%;
+    padding: 3% 15%;
     @media(max-width: 800px) {
-        padding: 5% 8%;
+        padding: 3% 8%;
     }
 `
 const TextWrapper = styled.div`
