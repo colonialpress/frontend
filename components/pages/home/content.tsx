@@ -31,9 +31,6 @@ const Wrapper = styled.div`
     width: 100%;
     align-items: center;
   padding-top: 3%;
-  @media(max-width: 1050px) {
-    padding-top: 22%;
-  }
 `
 const Container = styled.div`
     display: flex;
