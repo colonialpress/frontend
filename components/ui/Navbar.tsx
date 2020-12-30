@@ -4,8 +4,9 @@ import DarkTheme from "../../styles/theme/DarkTheme";
 import LightTheme from "../../styles/theme/LightTheme";
 import PropsTheme from "../../styles/theme/PropsTheme";
 import ActiveLink from "./../ActiveLink"
-import { ThemeContext } from "styled-components"
-import { useContext } from "react";
+import { Moon, Sun } from "react-feather";
+import { useRecoilState } from "recoil";
+import { themeState } from "../../styles/atoms/themes";
 const links = [
     {
         link: "/",
@@ -21,23 +22,23 @@ const links = [
     },
     {
         link: "/contact",
-        text: "Contact Us"
+        text: "Contact"
     }
 ]
 
 export default function Navbar(props) {
 
-    const themeContext = useContext(ThemeContext);
+    const [theme, setTheme] = useRecoilState(themeState);
 
     const getLogoPath = () => {
-        return themeContext === DarkTheme ? "colonialpress-vector-noshadow.svg" : "colonialpress-vector.svg"
+        return theme === DarkTheme ? "colonialpress-vector.svg" : "colonialpress-vector-noshadow.svg"
     }
 
     const [toggled, setToggled] = useState(false);
     const [width, setWidth] = useState(0);
 
     const isDesktop = () => {
-        return width > 800;
+        return width > 700;
     }
 
     useEffect(() => {
@@ -55,95 +56,107 @@ export default function Navbar(props) {
 
     return (
         <Wrapper>
-            <LogoSection>
-                <Logo src={`/img/navbar/${getLogoPath()}`} />
-                {!isDesktop() && <HamburgerButton onClick={() => setToggled(!toggled)} alt={"Navbar Logo"} />}
-            </LogoSection>
-            {(toggled || isDesktop()) && <LinksWrapper>
-                {links.map(entry => <LinkWrapper>
-                    <ActiveLink href={entry.link}>
-                        <LinkText>{entry.text}</LinkText>
-                    </ActiveLink>
-                </LinkWrapper>)
-                }
-            </LinksWrapper>}
+            <Content>
+                <LogoSection>
+                    <Logo src={`/img/navbar/${getLogoPath()}`} />
+                    {!isDesktop() && <HamburgerButton onClick={() => setToggled(!toggled)} />}
+                </LogoSection>
+                {(toggled || isDesktop()) && <LinksWrapper>
+                    {links.map(entry => <LinkWrapper>
+                        <ActiveLink href={entry.link}>
+                            <LinkText>{entry.text}</LinkText>
+                        </ActiveLink>
+                    </LinkWrapper>).concat(<LinkWrapper onClick={() => setTheme(theme === DarkTheme ? LightTheme : DarkTheme)}>
+                        {theme === DarkTheme ? <Moon /> : <Sun />}
+                    </LinkWrapper>)
+                    }
+                </LinksWrapper>}
+            </Content>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0.5em;
-    /* This will basically push everything to left and right. */
-    justify-content: center;
-    /* Want a line instead of shadow in dark mode. */
-    background: ${(props: PropsTheme) => props.theme.background};
-    ${props => props.theme === DarkTheme && css`
-        border-bottom: 1px solid #333;
-        background: black;
-    `}
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  /* This will basically push everything to left and right. */
+  justify-content: center;
+  align-items: center;
+  /* Want a line instead of shadow in dark mode. */
+  background: ${(props: PropsTheme) => props.theme.background};
+  ${props => props.theme === DarkTheme && css`
+    border-bottom: 1px solid #333;
+    background: black;
+  `}
     /* Box shadow for light mode. */
-    ${(props: PropsTheme) => props.theme === LightTheme && css`
-        box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
-    `}
-    @media(min-width: 800px) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+          ${(props: PropsTheme) => props.theme === LightTheme && css`
+            box-shadow: 0px 18px 35px ${props => props.theme.boxShadowColor};
+          `}
+`
+
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5em;
+  justify-content: space-between;
+
+  @media(min-width: 700px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
 `
 
 const LogoSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    @media(min-width: 800px) {
-        justify-content: center;
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @media(min-width: 700px) {
+    justify-content: center;
+    width: auto;
+  }
 `
 
 const HamburgerButton = styled.div`
-    width: 25px;
-    height: 10px;
-    border-top: 1px solid ${(props: PropsTheme) => props.theme.color};
-    border-bottom: 1px solid ${(props: PropsTheme) => props.theme.color};
+  width: 25px;
+  height: 10px;
+  border-top: 1px solid ${(props: PropsTheme) => props.theme.color};
+  border-bottom: 1px solid ${(props: PropsTheme) => props.theme.color};
 `
 
 const Logo = styled.img`
-    width: auto;
-    height: 4.2em;
-    padding: 10px;
-    @media(min-width: 1000px) {
-        padding-left: 105px;
-    }
+  width: auto;
+  height: 4em;
+  padding: 10px;
 `
 const LinkWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px;
 `
 
 const LinksWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 26px 0;
+  @media(min-width: 700px) {
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 10px 0;
-    @media(min-width: 800px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-    }
+    width: auto;
+  }
 `
 
 const LinkText = styled.a`
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    @media(min-width: 800px) {
+    @media(min-width: 700px) {
         padding: 0 15px;
     }
 `
