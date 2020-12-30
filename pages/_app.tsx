@@ -9,6 +9,7 @@ import { RecoilRoot } from "recoil";
 import { useRecoilValue } from "recoil";
 import { themeState } from "../styles/atoms/themes";
 import Footer from "../components/ui/Footer";
+import Header from "../components/ui/Header"
 
 function MyApp({ Component, pageProps }) {
 
@@ -34,6 +35,7 @@ function WrappedApp({ Component, pageProps }) {
         <GlobalStyle />
         <PageContainer>
           <Navbar />
+          <Header />
           <Component {...pageProps} />
           <Footer/>
         </PageContainer>
