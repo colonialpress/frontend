@@ -95,6 +95,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 100%;
+    height: auto;
     padding: 0 12%;
 `
 
@@ -118,12 +119,13 @@ const ListContainer = styled.div`
     display: -webkit-flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    height: inherit;
-  padding: 8px 8%;
+    height: auto;
+    padding: 8px 8%;
 `
 
 const ListItem = styled.p`
-        display: flex;
+    display: flex;
+    height: auto;
     width: 25%;
     font-size: 18px;
     text-align: left;

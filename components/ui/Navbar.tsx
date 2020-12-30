@@ -100,6 +100,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 0.5em;
+  height: auto;
   justify-content: space-between;
 
   @media(min-width: 700px) {
